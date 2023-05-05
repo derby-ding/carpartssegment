@@ -1,0 +1,5 @@
+ce lr 0.1 adam batch 24
+sce lr 0.1 adam
+lovasz lr 0.05 adam batch 20
+focal lr adam
+region 0.08 adam batch 24
