@@ -6,14 +6,20 @@ A json config file with a lot of possibilities for parameter tuning,
 Supports various models, losses, Lr schedulers, data augmentations and datasets,
 So, what's available ?
 
+
+
 Models
 the model we used is pspnet, with resnet as backbone, whick has been trained in voc dataset. you can download 
 the pretrained resnet-50 from :https://drive.google.com/file/d/1am4GccZeiBPePjyoCi67--s2b4YapnNa/view?usp=share_link
 (PSPNet) Pyramid Scene Parsing Network [Paper]
 
+
+
 Datasets
-our dataset has been adapted to ade20k format, which is locate in dataset fold. you should unzip the train.zip and dev.zip firstly.
+our dataset has been adapted to ade20k format, which is locate in carpartsegdata fold. you should unzip the train.zip and dev.zip firstly.
 ADE20K: For ADE20K, simply download the images and their annotations for training and validation from sceneparsing.csail.mit.edu, and for the rest visit the website.
+
+
 
 Losses
 In addition to the Cross-Entorpy loss, there is also
@@ -27,8 +33,12 @@ Poly learning rate, where the learning rate is scaled down linearly from the sta
 One Cycle learning rate, for a learning rate LR, we start from LR / 10 up to LR for 30% of the training time, and we scale down to LR / 25 for remaining time, the scaling is done in a cos annealing fashion (see Figure bellow), the momentum is also modified but in the opposite manner starting from 0.95 down to 0.85 and up to 0.95, for more detail see the paper: Super-Convergence.
 our region aware loss, 
 
+
+
 Data augmentation
 All of the data augmentations are implemented using OpenCV in \base\base_dataset.py, which are: rotation (between -10 and 10 degrees), random croping between 0.5 and 2 of the selected crop_size, random h-flip and blurring
+
+
 
 Training
 To train a model, first download the dataset to be used to train the model, then choose the desired architecture, add the correct path to the dataset and set the desired hyperparameters (the config file is detailed below), then simply run:
