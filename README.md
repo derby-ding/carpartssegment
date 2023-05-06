@@ -10,7 +10,8 @@ So, what's available ?
 
 Models  
 the model we used is pspnet, with resnet as backbone, whick has been trained in voc dataset. you can download 
-the pretrained resnet-50 from :https://drive.google.com/file/d/1am4GccZeiBPePjyoCi67--s2b4YapnNa/view?usp=share_link
+the pretrained resnet-50 and resnet-101 from :https://drive.google.com/file/d/1am4GccZeiBPePjyoCi67--s2b4YapnNa/view?usp=share_link  
+https://drive.google.com/file/d/18vgu4uty-oJeKh0PXNBqOumJlip0Ns75/view?usp=sharing  
 (PSPNet) Pyramid Scene Parsing Network [Paper]
 
 
@@ -50,8 +51,8 @@ The training will automatically be run on the GPUs (if more that one is detected
 
 Inference  
 For inference, we need a PyTorch trained model, the images we'd like to segment and the config used in training (to load the correct model and other parameters),
-
-python inference.py --config config.json --model best_model.pth --images images_folder
+see our inference example in regtest101.sh  
+python simpseg.py --config config.json --model best_model.pth --images images_folder  
 The predictions will be saved as .png images using the default palette in the passed fodler name, if not, outputs\ is used, for Pacal VOC the default palette is:
 
 
